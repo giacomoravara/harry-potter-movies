@@ -1,0 +1,10 @@
+.movie-card {
+  margin: 3%;
+  border: black 1px solid;
+  padding: 3%;
+  border-radius: 8px;
+}
+
+.movie-card button{
+  border-radius: 8px;
+}

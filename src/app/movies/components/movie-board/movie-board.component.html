@@ -1,0 +1,33 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/harry-potter.png">
+    </a>
+  </div>
+</nav>
+<div class="container-fluid p-4 text-center justify-content-center">
+  <div class="row justify-content-center">
+    <div class="col-6 d-flex align-items-center justify-content-around">
+      <div><b>Filters</b></div>
+      <div>
+        <div class="input-group">
+          <span class="input-group-text">Title</span>
+          <input type="text"  [(ngModel)]="titleFilter" (input)="applyFilters()" class="form-control">
+        </div>
+      </div>
+      <div>
+      <div class="input-group">
+      <span class="input-group-text">Release Year</span>
+      <input type="text"  [(ngModel)]="releaseYearFilter" (input)="applyFilters()" class="form-control">
+    </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-3">
+    <ng-container *ngFor="let movie of filteredMovies">
+      <div class="col-7 justify-content-center">
+        <app-movie [movie]="movie"></app-movie>
+      </div>
+    </ng-container>
+  </div>
+</div>
