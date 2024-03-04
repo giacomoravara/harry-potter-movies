@@ -4,6 +4,9 @@ import { AppComponent } from './app/app.component';
 import {setupWorker} from 'msw/browser';
 import {http, HttpResponse} from 'msw';
 
+
+
+
 const handlers = [
   http.get('/movies/:id', ({ params }) => {
 
@@ -216,12 +219,13 @@ const handlers = [
     ]);
   }),
 ];
-export const worker = setupWorker(...handlers);
-worker.start();
 
+async function enableMocking() {
+  const worker = setupWorker(...handlers);
+  return worker.start()
+}
 
-bootstrapApplication(AppComponent, appConfig)
+enableMocking().then(() => {
+  bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
-
-
-
+})
