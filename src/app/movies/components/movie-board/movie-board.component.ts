@@ -14,12 +14,19 @@ export class MovieBoardComponent implements OnInit {
   filteredMovies: Movie[] = []; // Nuovo array per i film filtrati
   titleFilter: string = '';
   releaseYearFilter: string = '';
+  loading: boolean = true;
+
   constructor(private movieService: MovieService, private router: Router) {}
 
   ngOnInit(): void {
+
+    this.loading = true;
+
+
     this.movieService.getMovies().subscribe(movies => {
       this.movies = movies;
-      this.applyFilters(); // Applica i filtri iniziali
+      this.applyFilters();
+      this.loading = false;
     });
   }
 
