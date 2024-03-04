@@ -1,7 +1,8 @@
 .movie-card {
-  margin: 3%;
+  margin: 1%;
   border: black 1px solid;
-  padding: 3%;
+  padding: 1%;
+  background-color: whitesmoke;
   border-radius: 8px;
 }
 
