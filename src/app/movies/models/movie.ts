@@ -1,8 +1,8 @@
-export class Movie{
-  public duration?: number;
-  public budget?: string;
-  public release_date?: string;
-  public id?: number;
-  public title?: string;
+export interface Movie{
+  duration: number;
+  budget: string;
+  release_date: string;
+  id: number;
+  title: string;
 }
 

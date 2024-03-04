@@ -11,7 +11,7 @@ import { tap } from 'rxjs';
 })
 export class MovieComponent implements OnInit {
 
-  @Input("movie") movie!: Movie;
+  @Input("movie") movie: Movie | undefined;
 
   constructor(private router: Router) {}
 
